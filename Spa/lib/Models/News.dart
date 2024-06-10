@@ -7,6 +7,7 @@ class News {
   final String details;
   final DateTime postedTime;
   final bool isFeatured;
+  late bool Favorite=false;
 
   News({
     required this.id,

@@ -5,7 +5,7 @@ class Branch {
   late String imageUrl;
   late String name;
   late String address;
-  late  String openingHours;
+  late String openingHours;
   late String phoneNumber;
 
   Branch({

@@ -25,6 +25,22 @@ class BranchRepository{
     return branches;
   }
 
+  Future<List<Branch>> getOtherBranches( Branch branch) async {
+    late List<Branch> branches = [];
+    try {
+      QuerySnapshot querySnapshot = await _firestore.collection('Branch').where("ID (PK)",isNotEqualTo: branch.id).get();
+      for (var doc in querySnapshot.docs) {
+        Branch branch = Branch.fromFirestore(doc);
+        branch.openingHours = await getOpeningHourForDay(branch.id) ?? "";
+        branches.add(branch);
+
+      };
+    } catch (e) {
+      print("Error fetching branches: $e");
+    }
+    return branches;
+  }
+
 
   Future<String?> getOpeningHourForDay(String id) async {
     var date = DateTime.now();

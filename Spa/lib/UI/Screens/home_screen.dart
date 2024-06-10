@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         width: MediaQuery.of(context).size.width,
         child: Image(
             image: NetworkImage(
-                news.imageUrl)),
+                news.imageUrl),width: MediaQuery.of(context).size.width,height: 260,fit: BoxFit.cover,),
       ),
     );
   }
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child:  Wrap(
                           runSpacing: 18,
                           spacing: 30,
-                          alignment: WrapAlignment.spaceBetween,
+                          alignment: WrapAlignment.start,
                           children: [
                             ...state.services
                                 .map((ser) => FeaturedServices(

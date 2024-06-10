@@ -14,8 +14,9 @@ class BranchesBloc extends Bloc<BranchesEvent, BranchesState> {
 
     on<GetOtherBranchesEvent>((event, emit) async {
       branches=await _branchRepository.getBranches();
-       final List<Branch> otherBranches = branches.where((branch) =>
-      branch != event.selectedBranch).toList();
+      // List<Branch> otherBranches = branches.where((branch) =>
+      // branch.id != event.selectedBranch.id).toList();
+      List<Branch> otherBranches= await _branchRepository.getOtherBranches(event.selectedBranch);
       return emit(BranchesLoaded(branches,otherBranches));
     });
   }
