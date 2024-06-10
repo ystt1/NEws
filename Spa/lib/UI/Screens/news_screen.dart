@@ -57,7 +57,7 @@ class _NewsScreenState extends State<NewsScreen> {
                             .map((news) => ItemTabView(news: news))
                       ]),
                       ListView(shrinkWrap: true, children: [
-                        ...state.listHighlighNews
+                        ...state.listFavoriteNews
                             .map((news) => ItemTabView(news: news))
                       ]),
                     ]),

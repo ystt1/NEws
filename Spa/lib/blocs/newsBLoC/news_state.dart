@@ -14,7 +14,8 @@ class NewsLoadingState extends NewsState{
 class NewsLoadedState extends NewsState{
   List<News> listAllNews=[];
   List<News> listHighlighNews=[];
-  NewsLoadedState({required this.listAllNews,required this.listHighlighNews});
+  List<News> listFavoriteNews=[];
+  NewsLoadedState({required this.listAllNews,required this.listHighlighNews,required this.listFavoriteNews});
 }
 
 
